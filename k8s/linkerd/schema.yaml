@@ -4,7 +4,7 @@ properties:
     type: string
     x-google-marketplace:
       type: NAME
-      default: linkerd
+      default: linkerd-1
   NAMESPACE:
     type: string
     x-google-marketplace:
@@ -15,7 +15,25 @@ properties:
     default: $REGISTRY:$TAG
     x-google-marketplace:
       type: IMAGE
+  LINKERD_UUID:
+    type: string
+    default: $UUID
+    x-google-marketplace:
+      type: STRING
+  LINKERD_SERVICE_ACCOUNT:
+    type: string
+    title: Linkerd Service Account
+    description: Service account to assign to main Linkerd resources
+    x-google-marketplace:
+      type: SERVICE_ACCOUNT
+      serviceAccount:
+        roles:
+        - type: ClusterRole
+          rulesType: PREDEFINED
+          rulesFromRoleName: cluster-admin
 required:
 - APP_INSTANCE_NAME
 - NAMESPACE
 - IMAGE_LINKERD
+- LINKERD_SERVICE_ACCOUNT
+- LINKERD_UUID
