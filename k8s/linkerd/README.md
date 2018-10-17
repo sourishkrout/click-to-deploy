@@ -15,7 +15,7 @@ Simple one click installer to run linkerd's control plane in a dedicated namespa
 
 ## Quick install with Google Cloud Marketplace
 
-[TBD]
+Please follow the steps in the Google Cloud marketplace launcher.
 
 ## Command line instructions
 
